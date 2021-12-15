@@ -1,5 +1,5 @@
-const jogador1 = "X";
-const jogador2 = "O";
+const jogador1 = "Jogador 1";
+const jogador2 = "Jogador 2";
 
 var vez = jogador1;
 var terminado = false;
@@ -11,7 +11,6 @@ function atualiza_vez(){
     if (terminado) {
         return;
     }
-
     let jogador;
 
     if (vez == jogador1){
@@ -19,7 +18,6 @@ function atualiza_vez(){
     }else{
         jogador = document.querySelector("#nome2");
     }
-
     var vez_p = document.getElementById("vez");
     vez_p.textContent = jogador.value;   
 }
@@ -32,13 +30,17 @@ function inicializar_espaços(){
                 return;
             }
 
+            let jogador;
+
             if (this.getElementsByTagName("img").length == 0){
                 if (vez == jogador1){
-                    this.innerHTML = "<img src='xis.png'>";
+                    jogador = document.querySelector("#nome1").value;
+                    this.innerHTML = jogador;
                     this.setAttribute("jogada", jogador1);
                     vez = jogador2;
                 }else{
-                    this.innerHTML = "<img src='circulo.png'>";
+                    jogador = document.querySelector("#nome2").value;
+                    this.innerHTML = jogador;
                     this.setAttribute("jogada", jogador2);
                     vez = jogador1;
                     }
@@ -88,3 +90,9 @@ function sleep(ms){
 function botao(){
     window.location.reload();
 } 
+
+function button(){
+    jogador = document.querySelector("#nome1");
+    var vez_p = document.getElementById("vez");
+    vez_p.textContent = jogador.value;
+}
