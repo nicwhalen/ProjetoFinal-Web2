@@ -92,7 +92,6 @@ function botao(){
 } 
 
 function button(){
-    return false;
     let jogador;
     jogador = document.querySelector("#nome1");
     var vez_p = document.getElementById("vez");
