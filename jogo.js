@@ -92,6 +92,7 @@ function botao(){
 } 
 
 function button(){
+    let jogador;
     jogador = document.querySelector("#nome1");
     var vez_p = document.getElementById("vez");
     vez_p.textContent = jogador.value;
